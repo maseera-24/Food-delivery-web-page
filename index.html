@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Crave - modern food delivery web application demo." />
+  <title>Crave — Food Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="navbar">
+      <a class="logo" href="#home" aria-label="Crave home">
+        <span class="logo-mark">C</span>
+        <span>crave<span class="logo-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+        <button class="mobile-login">Login / Sign up</button>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn search-toggle" aria-label="Search" title="Search">⌕</button>
+        <button class="login-btn">Login / Sign up</button>
+        <button class="cart-btn" id="cartOpenBtn" aria-label="Open shopping cart">
+          <span>Cart</span>
+          <b id="cartCount">0</b>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">GOOD FOOD. GOOD MOOD.</p>
+          <h1>Cravings delivered<br><em>to your door.</em></h1>
+          <p class="hero-copy">Discover the best local restaurants, order your favourites, and enjoy fresh food without the wait.</p>
+
+          <form class="hero-search" id="heroSearch">
+            <span class="search-symbol">⌕</span>
+            <input id="searchInput" type="search" placeholder="Search for food or restaurants..." autocomplete="off">
+            <button type="submit">Find food</button>
+          </form>
+
+          <div class="hero-meta">
+            <span>●  500+ restaurants</span>
+            <span>●  Fast delivery</span>
+            <span>●  Live order tracking</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-circle"></div>
+          <div class="hero-image-wrap">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=85" alt="">
+          </div>
+          <div class="floating-card rating-card"><strong>4.9</strong><span>★ ★ ★ ★ ★</span><small>Customer rating</small></div>
+          <div class="floating-card delivery-card"><span class="mini-icon">⌁</span><div><strong>25 min</strong><small>Avg. delivery</small></div></div>
+        </div>
+      </section>
+
+      <section class="section categories" id="offers">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">WHAT ARE YOU CRAVING?</p>
+            <h2>Explore by category</h2>
+          </div>
+          <button class="text-btn" id="clearCategory">View all <span>→</span></button>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <button class="category-card" data-category="Pizza"><span class="category-emoji">🍕</span><strong>Pizza</strong><small>24 places</small></button>
+          <button class="category-card" data-category="Burgers"><span class="category-emoji">🍔</span><strong>Burgers</strong><small>18 places</small></button>
+          <button class="category-card" data-category="Biryani"><span class="category-emoji">🍛</span><strong>Biryani</strong><small>31 places</small></button>
+          <button class="category-card" data-category="Chinese"><span class="category-emoji">🥡</span><strong>Chinese</strong><small>16 places</small></button>
+          <button class="category-card" data-category="Desserts"><span class="category-emoji">🍰</span><strong>Desserts</strong><small>22 places</small></button>
+          <button class="category-card" data-category="Beverages"><span class="category-emoji">🥤</span><strong>Beverages</strong><small>15 places</small></button>
+        </div>
+      </section>
+
+      <section class="section restaurants" id="restaurants">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TOP PICKS NEAR YOU</p>
+            <h2>Popular restaurants</h2>
+          </div>
+          <span class="results-label" id="resultsLabel">6 restaurants</span>
+        </div>
+        <div class="restaurant-grid" id="restaurantGrid"></div>
+      </section>
+
+      <section class="section menu-section" id="menu">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FROM OUR KITCHEN</p>
+            <h2>Customer favourites</h2>
+          </div>
+          <button class="text-btn" id="showAllFood">Explore menu <span>→</span></button>
+        </div>
+        <div class="food-grid" id="foodGrid"></div>
+      </section>
+
+      <section class="offer-banner">
+        <div>
+          <p class="eyebrow">FIRST ORDER?</p>
+          <h2>Get 30% off your first craving.</h2>
+          <p>Use code <strong>CRAVE30</strong> at checkout. Maximum discount ₹150.</p>
+        </div>
+        <button class="primary-btn" id="offerBtn">Order now →</button>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="footer-brand">
+        <a class="logo" href="#home"><span class="logo-mark">C</span><span>crave<span class="logo-dot">.</span></span></a>
+        <p>Good food, delivered with care.</p>
+      </div>
+      <div class="footer-links">
+        <div><strong>Company</strong><a href="#restaurants">Restaurants</a><a href="#offers">Offers</a></div>
+        <div><strong>Help</strong><a href="#">FAQs</a><a href="#">Contact us</a></div>
+        <div><strong>Follow</strong><a href="#">Instagram</a><a href="#">Facebook</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header">
+      <div><p class="eyebrow">YOUR ORDER</p><h2>Your cart</h2></div>
+      <button class="close-btn" id="cartCloseBtn" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="summary-row"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+      <div class="summary-row"><span>Delivery fee</span><strong id="deliveryFee">₹0</strong></div>
+      <div class="summary-row total"><span>Total</span><strong id="total">₹0</strong></div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to checkout</button>
+      <small class="checkout-note">Taxes and final delivery charges are calculated at checkout.</small>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
